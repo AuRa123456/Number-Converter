@@ -1,17 +1,21 @@
 #💕
+print("  Number Converter\n********************")
 print("Select an operation\n----------------------")
 print("1.decimal to binary")
 print("2.decimal to octal")
-print("3.decimal to hexadecimal")
+print("3.decimal to hexadecimal\n")
 print("4.binary to decimal")
 print("5.binary to octal")
-print("6.binary to hexadecimal")
+print("6.binary to hexadecimal\n")
 print("7.octal to decimal")
 print("8.octal to hexadecimal")
-print("9.octal to binary\n---------------------------------")
+print("9.octal to binary\n")
+print("10.hexadecimal to binary")
+print("11.hexadecimal to binary")
+print("12.hexadecimal to binary\n-------------------------")
 
 while True:
-    choice = input("Enter choice(1/2/3/4/5/6/7/8/9): ");
+    choice = input("Enter choice(1/2/3/4/5/6/7/8/9/10/11/12): ");
 
 #decimal to binary    
     if choice == '1':
@@ -46,7 +50,7 @@ while True:
             digit = b_num.pop()
             if digit == '1':
                 value = value + pow(2, i)
-        print(oct(value))
+        print(oct(value)[2:])
 
 #binary to hexadecimal
     elif choice == '6':
@@ -56,7 +60,7 @@ while True:
             digit = b_num.pop()
             if digit == '1':
                 value = value + pow(2, i)
-        print(hex(value))
+        print(hex(value)[2:])
 
 #octal to decimal
     elif choice == '7':
@@ -92,7 +96,7 @@ while True:
             octnum = int(octnum/10)
 
         if chk == 0:
-            print(hex(value))
+            print(hex(value)[2:])
 
 #octal to binary
     elif choice == '9':
@@ -112,6 +116,51 @@ while True:
         if chk == 0:
             print(bin(value)[2:])
 
+#hexadecimal to decimal    
+    elif choice == '10':
+        def new_func():
+            dictionary_hexa_to_decimal = {'0': 0, '1' : 1, '2' : 2, '3' : 3, '4' : 4, '5' : 5, '6' : 6, '7' : 7, '8' : 8, '9' : 9, 'A' : 10 , 'B' : 11, 'C' : 12, 'D' : 13, 'E' : 14, 'F' : 15}  
+            hexadecimal_num = input("Please enter the hexadecimal value: ").strip().upper()  
+            decimal = 0  
+ 
+            length = len(hexadecimal_num) -1  
+   
+            for digit in hexadecimal_num:
+                decimal += dictionary_hexa_to_decimal[digit]*16**length
+                length -= 1  
+            print("The converted hexadecimal string into decimal string is: ", decimal)
+        new_func()
+
+#hexadecimal to binary
+    elif choice == '11':
+        def new_func():
+            dictionary_hexa_to_decimal = {'0': 0, '1' : 1, '2' : 2, '3' : 3, '4' : 4, '5' : 5, '6' : 6, '7' : 7, '8' : 8, '9' : 9, 'A' : 10 , 'B' : 11, 'C' : 12, 'D' : 13, 'E' : 14, 'F' : 15}  
+            hexadecimal_num = input("Please enter the hexadecimal value: ").strip().upper()  
+            decimal = 0  
+ 
+            length = len(hexadecimal_num) -1  
+   
+            for digit in hexadecimal_num:
+                decimal += dictionary_hexa_to_decimal[digit]*16**length
+                length -= 1  
+            print("The converted hexadecimal string into binary string is: ", bin(decimal)[2:])
+        new_func() 
+
+#hexadecimal to octal        
+    elif choice == '12':
+        def new_func():
+            dictionary_hexa_to_decimal = {'0': 0, '1' : 1, '2' : 2, '3' : 3, '4' : 4, '5' : 5, '6' : 6, '7' : 7, '8' : 8, '9' : 9, 'A' : 10 , 'B' : 11, 'C' : 12, 'D' : 13, 'E' : 14, 'F' : 15}  
+            hexadecimal_num = input("Please enter the hexadecimal value: ").strip().upper()  
+            decimal = 0  
+ 
+            length = len(hexadecimal_num) -1  
+   
+            for digit in hexadecimal_num:
+                decimal += dictionary_hexa_to_decimal[digit]*16**length
+                length -= 1  
+            print("The converted hexadecimal string into octal string is: ", bin(decimal)[2:])
+        new_func() 
+    
     else:
         print ("invalid input")
 

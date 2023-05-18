@@ -1,4 +1,4 @@
-#💕
+#
 print("  Number Converter\n********************")
 print("Select an operation\n----------------------")
 print("1.decimal to binary")
